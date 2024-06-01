@@ -1,6 +1,6 @@
-//  export const environment = {
-//   production: false,
-//   apiUrl: 'http://localhost:8015/api',
+ export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:8010/api',
 //   envVar: {
 //     /** * Add environment variables you want to retrieve from process
 //      * PORT:4200,
@@ -9,4 +9,4 @@
 //     LOG_LEVEL: 'debug',
 //     verison: 0
 //   }
-// };
+};
