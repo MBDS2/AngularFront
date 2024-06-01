@@ -44,10 +44,10 @@ export class DashboardComponent implements OnInit{
     this.isUserLogged = this.authService.isUserLogged();
     this.formService.initSortField();
   }
-  cours: string [] = ['algebre.png', 'anglais.png', 'gestion_financiere.png','intelligence_artificielle.png','management_si.png','math_analyse.png', 'math_big_data.png',
-  'web.png'
-  ]
-  profs: string[] = ['prof1.png', 'prof2.png', 'prof3.png', 'prof4.png', 'prof5.png', 'prof6.png', 'prof7.png']
+  cours: string [] = ['angular.png', 'base_donnes.png', 'big_data.png','devops.png','data_analyst.png','gestioon_projet.png', 'grails.png',
+  'mongodb.png','mysql.png','r.png','statistques.png']
+
+  profs: string[] = ['teacher1.jpg', 'teacher2.jpg', 'teacher3.jpg', 'teacher4.jpg', 'teacher5.jpg', 'teacher6.webp', 'teacher7.webp']
 
   assignmentLocal!: Assignment[];
 

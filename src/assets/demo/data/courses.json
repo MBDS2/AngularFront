@@ -1,37 +1,58 @@
 [
   {
-    "name": "Base de données",
-    "teacherPhoto": "prof1.png",
+    "name": "Administration de base de données Oracle",
+    "teacherPhoto": "teacher1.jpg",
     "coursePhoto": "base_donnees.png"
   },
   {
-    "name": "Technologies Web",
-    "teacherPhoto": "prof2.png",
-    "coursePhoto": "web.png"
+    "name": "Angular",
+    "teacherPhoto": "teacher2.jpg",
+    "coursePhoto": "angular.png"
   },
   {
     "name": "Grails",
-    "teacherPhoto": "prof3.png",
+    "teacherPhoto": "teacher3.jpg",
     "coursePhoto": "grails.png"
   },
   {
-    "name": "Math Big Data",
-    "teacherPhoto": "prof4.png",
-    "coursePhoto": "math_big_data.png"
+    "name": "Statistique inférentielle",
+    "teacherPhoto": "teacher4.jpg",
+    "coursePhoto": "statistiques.jpg"
   },
   {
-    "name": "Intelligence Artificielle",
-    "teacherPhoto": "prof5.png",
-    "coursePhoto": "intelligence_artificielle.png"
+    "name": "Devops - Docker",
+    "teacherPhoto": "teacher5.jpg",
+    "coursePhoto": "devops.jpeg"
   },
   {
-    "name": "Algebre",
-    "teacherPhoto": "prof6.png",
-    "coursePhoto": "algebre.png"
+    "name": "Langage R pour la data",
+    "teacherPhoto": "teacher6.webp",
+    "coursePhoto": "r.png"
   },
   {
-    "name": "Gestion Financiere",
-    "teacherPhoto": "prof7.png",
-    "coursePhoto": "gestion_financiere.png"
+    "name": "Gestion de projet",
+    "teacherPhoto": "teacher2.webp",
+    "coursePhoto": "gestion_projet.png"
+  },
+  {
+    "name": "SGBD MySQL",
+    "teacherPhoto": "teacher4.jpg",
+    "coursePhoto": "mysql.png"
+  },
+  {
+    "name": "Big Data avec Mongodb",
+    "teacherPhoto": "teacher7.webp",
+    "coursePhoto": "mongodb.webp"
+  },
+  {
+    "name": "Big Data",
+    "teacherPhoto": "teacher6.webp",
+    "coursePhoto": "big_data.png"
+  },
+  {
+    "name": "Data vizualisation",
+    "teacherPhoto": "teacher7.webp",
+    "coursePhoto": "data_analyst.png"
   }
+
 ]
