@@ -1,0 +1,54 @@
+<div class="grid">
+  <div class="col-12">
+    <div class="card px-6 py-6">
+    <p-dialog [(visible)]="modalDisplayed" [style]="{width: '30vw'}" [modal]="true" class="p-fluid" [closable]="false" [blockScroll]="false">
+      <ng-template pTemplate="content">
+        <div class="field">
+          <label for="name">Devoir</label>
+          <input type="text" pInputText id="name" [(ngModel)]="assignmentToEdit.name" required autofocus [ngClass]="{'ng-invalid ng-dirty' : submitted && !assignmentToEdit.name}"/>
+          <small class="ng-dirty ng-invalid" *ngIf="submitted && !assignmentToEdit.name">Nom Obligatoire.</small>
+        </div>
+        <div class="field">
+          <label for="comment">Remarque</label>
+          <textarea id="comment" pInputTextarea [(ngModel)]="assignmentToEdit.comment" required rows="3" cols="20"></textarea>
+        </div>
+        <div class="formgrid grid">
+          <div class="field col">
+            <label for="dateRendu">Rendu le</label>
+            <p-calendar id="date" [(ngModel)]="assignmentToEdit.deadLine" ></p-calendar>
+          </div>
+        </div>
+        <div class="formgrid grid">
+          <div class="field col">
+            <label for="markActuel">Note</label>
+            <p-inputNumber id="mark" [(ngModel)]="assignmentToEdit.mark"></p-inputNumber>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="footer">
+        <button pButton pRipple label="Annuler" class="p-button-text" (click)="cancelEdit()" style="color: red;"></button>
+        <button pButton pRipple label="Modifier" class="p-button-text" (click)="saveEdit()" style="color: green;"></button>
+      </ng-template>
+    </p-dialog>
+  </div>
+</div>
+
+<p-dialog [(visible)]="this.authService.displayModalAuthorization" [modal]="true" [style]="{width:'450px'}" [closable]="false">
+  <div class="flex align-items-center justify-content-center">
+    <span *ngIf="message" class="red">{{message}}</span>
+  </div>
+  <ng-template pTemplate="footer">
+    <button pButton pRipple class="p-button-text" label="OK" (click)="this.authService.closeModalAuthorization()"></button>
+  </ng-template>
+</p-dialog>
+
+<p-dialog [(visible)]="displayModalModification" [modal]="true" [style]="{width:'450px'}" [closable]="false">
+  <div class="flex align-items-center justify-content-center">
+    <span *ngIf="message" class="green">{{message}}</span>
+  </div>
+  <ng-template pTemplate="footer">
+    <button pButton pRipple class="p-button-text" label="OK" (click)="closeModalModification()"></button>
+  </ng-template>
+</p-dialog>
+
+</div>

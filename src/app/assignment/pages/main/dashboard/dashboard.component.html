@@ -1,0 +1,85 @@
+<div *ngIf="assignments" class="grid">
+  <div class="col-12">
+    <div class="card">
+      <p-dataView #assignmentContainer [value]="assignments" [paginator]="true" [rows]="9" filterBy="name" [sortField]="formService.sortField" [sortOrder]="formService.sortOrder" layout="grid">
+        <ng-template pTemplate="header">
+          <div class="flex flex-column md:flex-row md:justify-content-between gap-2" style="background-color: white;">
+            <span class="p-input-icon-left">
+              <i class="pi pi-search"></i>
+              <input type="search" pInputText placeholder="Rechercher" (input)="assignmentContainer.filter(assignmentName)"  [(ngModel)]="assignmentName" >
+            </span>
+            <p-dropdown [options]="sortOptions" placeholder="Trier" (onChange)="formService.onSortChange($event)"></p-dropdown>
+          </div>
+        </ng-template>
+
+        <ng-template let-assignment pTemplate="gridItem">
+          <div class="shop-card" style="margin-left: 10%; margin-top: 5%;">
+            <div class="title" style="font-size: 15px;">
+              {{assignment.name}}
+            </div>
+            <div class="desc" style="font-weight: bold;font-size:10px;" [class]="'product-badge status-' + assignment.deadLine">
+              {{assignment.deadLine | date}}
+            </div>
+            <div class="slider">
+              <figure data-color="#E24938, #A30F22">
+                <img [src]="assignment.course.coursePhoto" [alt]="assignment.name" style="width: 300px; height: 300px;" />
+              </figure>
+            </div>
+            <div class="cta">
+              <div class="price" [ngStyle]="{'color': assignment.rendered ? 'green' : 'red'}" style="font-size: 15px;top:-10%;">
+                {{ assignment.rendered ? 'Rendu' : 'Non Rendu' }}
+              </div>
+              <div>
+                <button class="btn" *ngIf="isUserLogged" (click)="showModalDialog(assignment)">INFORMATIONS<span class="bg"></span></button>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </p-dataView>
+    </div>
+  </div>
+</div>
+
+
+
+<p-dialog *ngIf="selectedAssignment" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
+          [draggable]="false" [resizable]="false" [closable]="false">
+  <ng-template pTemplate="body">
+    <h4 class="m-0" style="text-align: center;font-weight:bold;color:tomato">INFORMATIONS DU DEVOIR</h4>
+    <div class=" card  mt-2" style="display: flex;flex-direction:column;justify-content:center;align-items:center;">
+      <div class="flex justify-content-between">
+        <h6><span style="font-weight: bold;">Devoir</span> : {{selectedAssignment.name}}</h6>
+      </div>
+      <div class="flex justify-content-between">
+        <h6><span style="font-weight: bold;">Rendu le</span> : {{selectedAssignment.deadLine | date}}</h6>
+      </div>
+      <div class="flex justify-content-between">
+        <h6><span style="font-weight: bold;">Note</span> : {{selectedAssignment.mark}}</h6>
+      </div>
+      <div class="flex justify-content-between">
+        <h6><span style="font-weight: bold;">Remarque</span> : {{selectedAssignment.comment}}</h6>
+      </div>
+      <div class="flex justify-content-between">
+        <h6><span style="font-weight: bold;">Etudiant</span> : {{selectedAssignment.author}}</h6>
+      </div>
+      <div *ngIf="!selectedAssignment.rendered && !isOutOfDeadLine(selectedAssignment.deadLine)" class="flex justify-content-between align-items-center">
+        <button pButton class="p-button-success" (click)="rendre()">Rendre devoir</button>
+      </div>
+    </div>
+
+    <h4 class="m-0" style="text-align: center;font-weight:bold;color:tomato">INFORMATIONS SUR L'AUTEUR</h4>
+    <div class=" card  mt-2" style="display: flex;flex-direction:column;justify-content:center;align-items:center;">
+      <div>
+        <h6>Cours : {{selectedAssignment.course.name}}</h6>
+      </div>
+      <div style="display: flex;flex-direction:column;">
+        <h6 style="font-weight: bold;text-align:center;">Photo Auteur</h6>
+        <img [src]="selectedAssignment.course.teacherPhoto" width="150" [alt]="selectedAssignment.course.name">
+      </div>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <p-button (click)="displayModal=false" label="Retour" styleClass="p-button-text"></p-button>
+  </ng-template>
+</p-dialog>
+

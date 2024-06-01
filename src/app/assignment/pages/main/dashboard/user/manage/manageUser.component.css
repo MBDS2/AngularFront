@@ -1,0 +1,71 @@
+/* Style for the table rows and cells */
+tr td {
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  vertical-align: middle;
+  background-color: #fff;
+}
+
+/* Style for the column title */
+.p-column-title {
+  font-weight: bold;
+  color: #666;
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Style for the table rows on hover */
+tr:hover td {
+  background-color: #f9f9f9;
+}
+
+/* Style for the image */
+tr td img {
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the buttons */
+.p-button-rounded {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+}
+
+/* Success button */
+.p-button-success {
+  background-color: #28a745;
+  border: none;
+}
+
+.p-button-success:hover {
+  background-color: #218838;
+}
+
+/* Danger button */
+.p-button-danger {
+  background-color: #dc3545;
+  border: none;
+}
+
+.p-button-danger:hover {
+  background-color: #c82333;
+}
+
+/* Flex container for buttons */
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+/* Tooltip styling */
+.ui-tooltip {
+  background-color: #333;
+  color: #fff;
+  border-radius: 4px;
+  padding: 5px 10px;
+}

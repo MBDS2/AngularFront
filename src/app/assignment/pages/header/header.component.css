@@ -1,0 +1,97 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.signup-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+}
+
+.signup-form {
+  width: 400px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: auto;
+}
+
+.signup-form h2 {
+  margin: 0 0 20px;
+}
+
+.signup-form input {
+  width: calc(100% - 50px);
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 0 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.signup-form input:hover {
+  border-color: tomato;
+}
+
+.signup-form button {
+  width: calc(100% - 50px);
+  height: 40px;
+  border: none;
+  background-color: tomato;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+  justify-content: center;
+
+}
+
+.signup-form button:hover {
+  border: 1px solid gray;
+}
+
+.mot-de-passe {
+  padding: 10px;
+  width: calc(100% - 24px);
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 0 8px;
+  border: 1px solid #ddd;
+}
+
+.bloc {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(0, 0%, 96%);
+  margin-left: 140%;
+  position: relative;
+  top: 30%;
+}
+
+#bloc1 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+}
+
+.profil {
+  text-align: center;
+  color: tomato;
+}

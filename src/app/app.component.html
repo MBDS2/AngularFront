@@ -1,0 +1,11 @@
+<div (window:resize)="onResizeWindow()" class="layout-wrapper" style="background-color: white;">
+  <app-header></app-header>
+  <div class="layout-main-container" style="background-color: white;">
+    <div class="flex justify-content-start ">
+      <app-loader *ngIf="_loader.loading$ | async"></app-loader>
+      <app-sidebar *ngIf="this.authService.isUserLogged()"></app-sidebar>
+      <router-outlet></router-outlet>
+      <app-auth *ngIf="configService.modalAutorization" ></app-auth>
+    </div>
+  </div>
+</div>

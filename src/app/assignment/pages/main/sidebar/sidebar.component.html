@@ -1,0 +1,20 @@
+<div *ngIf="this.configService.isDesktop()" class="card layout-menu-plus {{this.configService.isMobile()}}" [style]="{width:'80px'}">
+  <div class="sidebar">
+    <div class="logo-wrapper">
+    </div>
+    <ul class="sidebar-menu">
+      <li>
+      <ng-container *ngFor="let el of model;">
+        <div >
+          <div class="lien">
+            <button pButton icon="{{el.item.icon}}" [routerLink]="el.item.routerLink"></button>
+          </div>
+        </div>
+      </ng-container>
+      </li>
+    </ul>
+</div>
+
+
+
+

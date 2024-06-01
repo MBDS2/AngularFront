@@ -1,0 +1,66 @@
+
+<div class="layout-topbar">
+
+  <button #topbarmenubutton class="p-link layout-topbar-menu-button layout-topbar-button" (click)="this.configService.showProfileSidebar()" >
+    <i class="pi pi-ellipsis-v"></i>
+  </button>
+
+  <div #topbarmenu class="layout-topbar-menu" [ngClass]="{'layout-topbar-menu-mobile-active': this.configService.state.profileSidebarVisible}" >
+    <p-divider *ngIf="this.configService.isMobile() && this.authService.isUserLogged()"></p-divider>
+    <button *ngIf="this.loginService.isUserLogged()" class="p-link layout-topbar-button" (click)="profile()">
+      <i class="pi pi-fw pi-user blue"></i>
+    </button>
+    <button *ngIf="this.loginService.isUserLogged()" class="p-link layout-topbar-button" (click)="logOut()">
+      <i class="pi pi-fw pi-power-off red"></i>
+    </button>
+  </div>
+</div>
+
+<!--Boite de dialogue pour la visualisation des infos de l'utilisateur-->
+<p-dialog [(visible)]="displayUserInformationModal" [modal]="true" [style]="{width: '70vw'}" class="p-fluid" [draggable]="false" [resizable]="false" [closable]="false">
+  <ng-template pTemplate="body">
+    <div>
+      <h3 class="profil">Profil</h3>
+      <div class="signup-container">
+        <form class="signup-form">
+          <input type="text" value="User : {{actualUser?.name}}" disabled style="text-align: center;">
+          <input type="text" value="Mail : {{actualUser?.email}}" disabled style="text-align: center;">
+        </form>
+        <form class="signup-form">
+          <input type="text" value="Mot de passe : {{actualUser?.password}}" disabled style="text-align: center;">
+          <input type="text" value="Priorité : {{actualUser?.role}}" disabled style="text-align: center;">
+        </form>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <p-button label="Retour" styleClass="p-button-text" [style]="{color:'	#00FF00'}" (click)="displayUserInformationModal=false"></p-button>
+    <p-button label="Modifier" styleClass="p-button-text" [style]="{color:'	tomato'}" (click)="editUserProfile()" ></p-button>
+  </ng-template>
+</p-dialog>
+
+<!--Boite de dialogue pour la modification de l'utilisateur-->
+<p-dialog [(visible)]="displayEditUserInformationModal" [modal]="true" [style]="{width: '40vw'}" class="p-fluid"
+          [draggable]="false" [resizable]="false" [closable]="false">
+  <ng-template pTemplate="body">
+    <h3 class="profil">Modification</h3>
+    <div class=" card  mt-2">
+      <div class="field">
+        <p-password [(ngModel)]="ancienPassword" id="newPassword" name="newPassword" [toggleMask] ="true" placeholder="Nouveau mot de passe"></p-password>
+      </div>
+      <div class="field">
+        <input type="text" pInputText [(ngModel)]="actualUserToEdit.name" id="name" name="name" [style]="{border:'1px solid tomato'}" required>
+        <small class="p-error block" *ngIf="actualUserToEdit.name==null || actualUserToEdit.name.replaceAll(' ','')==''">nom obligatoire.</small>
+      </div>
+      <div class="field" id="signup-form">
+        <input type="text" pInputText [(ngModel)]="actualUserToEdit.email" id="email" name="email" [style]="{border:'1px solid tomato'}">
+        <small class="p-error block" *ngIf="actualUserToEdit.email==null || actualUserToEdit.email.replaceAll(' ','')==''">mail obligatoire</small>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <button pButton pRipple label="Annuler" [style]="{color:'	tomato'}" class="p-button-text" (click)="cancelEditUserModal()"></button>
+    <p-button label="Modifier" styleClass="p-button-text" [style]="{color:'	#00FF00'}" (click)="confirmEditUser()"></p-button>
+  </ng-template>
+</p-dialog>
+
