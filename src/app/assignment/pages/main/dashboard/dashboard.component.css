@@ -2,7 +2,6 @@
 Mixins
 ---------------------*/
 
-
 /*--------------------
 Body
 ---------------------*/
@@ -22,7 +21,6 @@ body {
   background: linear-gradient(15deg, #d33f34 50%, #a61322 50.1%);
 }
 
-
 /*--------------------
 Shop Card
 ---------------------*/
@@ -39,91 +37,88 @@ Shop Card
   padding: 25px;
   text-align: center;
   z-index: 2;
-
-  figure {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    outline: none!important;
-
-    & img {
-      margin: -95px 0 -60px;
-      width: 100%;
-    }
-  }
-
-  .title {
-    font-weight: 900;
-    text-transform: uppercase;
-    font-size: 30px;
-    color: #23211f;
-    margin-bottom: 5px;
-  }
-
-  .desc {
-    font-size: 17px;
-    opacity: .8;
-    margin-bottom: 3px;
-  }
-
-  .cta {
-    padding: 20px 20px 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-
-    &::after {
-      content: '';
-      display: table;
-      clear: both;
-    }
-  }
-
-  .price {
-    float: left;
-    color: #FF3100;
-    font-size: 22px;
-    font-weight: 900;
-    padding-top: 2px;
-    transition: color .3s ease-in-out;
-    margin-top: 4px;
-  }
-
-  .btn {
-    position: relative;
-    z-index: 1;
-    float: right;
-    display: inline-block;
-    font-size: 13px;
-    font-weight: 900;
-    text-transform: uppercase;
-    color: #FF3100;
-    padding: 12px 18px;
-    cursor: pointer;
-    transition: all .3s ease-in-out;
-    line-height: .95;
-    border: none;
-    background: none;
-    outline: none;
-    border: 1px solid #FF3100;
-    border-radius: 20px;
-    overflow: hidden;
-
-    & .bg {
-      width: 101%;
-      height: 101%;
-      display: block!important;
-      z-index: -1;
-      opacity: 0;
-      transition: all .3s ease-in-out;
-      background: linear-gradient(135deg, #a61322, #d33f34);
-    }
-
-  }
-
 }
 
+.shop-card figure {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  outline: none !important;
+}
+
+.shop-card figure img {
+  margin: -95px 0 -60px;
+  width: 100%;
+}
+
+.shop-card .title {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 30px;
+  color: #23211f;
+  margin-bottom: 5px;
+}
+
+.shop-card .desc {
+  font-size: 17px;
+  opacity: .8;
+  margin-bottom: 3px;
+}
+
+.shop-card .cta {
+  padding: 20px 20px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.shop-card .cta::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.shop-card .price {
+  float: left;
+  color: #FF3100;
+  font-size: 22px;
+  font-weight: 900;
+  padding-top: 2px;
+  transition: color .3s ease-in-out;
+  margin-top: 4px;
+}
+
+.shop-card .btn {
+  position: relative;
+  z-index: 1;
+  float: right;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #FF3100;
+  padding: 12px 18px;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  line-height: .95;
+  border: none;
+  background: none;
+  outline: none;
+  border: 1px solid #FF3100;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.shop-card .btn .bg {
+  width: 101%;
+  height: 101%;
+  display: block !important;
+  z-index: -1;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+  background: linear-gradient(135deg, #a61322, #d33f34);
+}
 
 /*--------------------
 Slick Dots
@@ -140,7 +135,7 @@ Slick Dots
 }
 
 .slick-dots .slick-dots span {
-    position: absolute;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -165,9 +160,9 @@ Slick Dots
 
 /*--------------------
 Background
---------------------*/
+---------------------*/
 .bg {
-    position: absolute;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -177,7 +172,6 @@ Background
   z-index: 1;
   display: none;
 }
-
 
 .the-most {
   position: fixed;
