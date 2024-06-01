@@ -185,8 +185,8 @@ Background
   width: 50vw;
   max-width: 200px;
   padding: 10px;
+}
 
-  img {
-    max-width: 100%;
-  }
+img {
+  max-width: 100%;
 }
