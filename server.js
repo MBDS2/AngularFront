@@ -9,4 +9,4 @@ app.get("/*", function(req, res){
 })
 
 app.listen(process.env.PORT || 8081)
-console.log('Démarré !')
+console.log('Serveur démarré !')
