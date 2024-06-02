@@ -1,6 +1,7 @@
  export const environment = {
-  production: false,
-  apiUrl: 'http://localhost:8010/api',
+  production: true,
+  apiUrl: 'https://backend-angular-a5t5.onrender.com/api/assignments',
+//   apiUrl: 'http://localhost:8010/api',
 //   envVar: {
 //     /** * Add environment variables you want to retrieve from process
 //      * PORT:4200,
