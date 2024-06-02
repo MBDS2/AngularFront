@@ -47,15 +47,15 @@ Pour lancer l'application en ligne, veuillez suivre ces étapes :
 1- Accédez à l'application hébergée sur "RENDER" en utilisant le lien suivant : https://frontend-angular-zbb6.onrender.com
 
 2- Pour vous connecter en tant qu'administrateur, utilisez les identifiants suivants :
-Adresse mail : konate@mbds.com
-Mot de passe : mbds2024
+Adresse mail : konate@gmail.com
+Mot de passe : 1234
 
 3- Si vous souhaitez vous connecter en tant qu'utilisateur Standard, utilisez les identifiants suivants :
-Adresse mail :  nicanor@mbds.com
-Mot de passe :  mbds2024
+Adresse mail :  nicanor@gmail.com
+Mot de passe :  1234
 
 Adresse mail :  roxane@mbds.com
-Mot de passe :  mbds2024
+Mot de passe :  1234
 
 
 
