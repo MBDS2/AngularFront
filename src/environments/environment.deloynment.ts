@@ -1,9 +1,9 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://backend-angular-a5t5.onrender.com/api', // Modifier cette URL
+  apiUrl: 'https://backend-angular-a5t5.onrender.com/api', // URL correcte du backend
   envVar: {
     endpointUrl: 'https://backend-angular-a5t5.onrender.com/api',
     LOG_LEVEL: 'debug',
-    verison: 0
+    version: 0
   }
 };

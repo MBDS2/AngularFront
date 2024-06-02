@@ -4,7 +4,9 @@ import {HttpClient} from "@angular/common/http";
 import {User} from "../../models/user";
 import {URL} from "../../utils/utils";
 import {Observable} from "rxjs";
-import {configAssignment} from "../assignment/assignment.service";
+// user.service.ts
+import { ConfigAssignment } from "../assignment/assignment.service";
+
 
 export interface configUser {
   modalOpened: boolean,
