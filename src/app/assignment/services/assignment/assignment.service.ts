@@ -25,8 +25,11 @@ export class AssignmentService implements OnInit{
   }
 
   getAssignmentsLocal(): Observable<Assignment[]>{
-    return this.http.get<Assignment[]>('assets/demo/data/assignment.json');
+    // return this.http.get<Assignment[]>('assets/demo/data/assignment.json');
+    return this.http.get<Assignment[]>(`${URL}/assignments`);
+
   }
+  
 
   ngOnInit(): void {
     this.getAssignments().subscribe(assignments => this.assignments = assignments);
