@@ -6,7 +6,6 @@
         <div class="field">
           <label for="name">Devoir</label>
           <input type="text" pInputText id="name" [(ngModel)]="assignmentToEdit.name" required autofocus [ngClass]="{'ng-invalid ng-dirty' : submitted && !assignmentToEdit.name}"/>
-          <small class="ng-dirty ng-invalid" *ngIf="submitted && !assignmentToEdit.name">Nom Obligatoire.</small>
         </div>
         <div class="field">
           <label for="comment">Remarque</label>

@@ -16,7 +16,6 @@
   </div>
 </div>
 
-<!--Boite de dialogue pour la visualisation des infos de l'utilisateur-->
 <p-dialog [(visible)]="displayUserInformationModal" [modal]="true" [style]="{width: '70vw'}" class="p-fluid" [draggable]="false" [resizable]="false" [closable]="false">
   <ng-template pTemplate="body">
     <div>
@@ -46,15 +45,15 @@
     <h3 class="profil">Modification</h3>
     <div class=" card  mt-2">
       <div class="field">
-        <p-password [(ngModel)]="ancienPassword" id="newPassword" name="newPassword" [toggleMask] ="true" placeholder="Nouveau mot de passe"></p-password>
+        <p-password [(ngModel)]="ancienPassword" id="newPassword" name="newPassword" [feedback]="false" [toggleMask] ="true" placeholder="Nouveau mot de passe"></p-password>
       </div>
       <div class="field">
         <input type="text" pInputText [(ngModel)]="actualUserToEdit.name" id="name" name="name" [style]="{border:'1px solid tomato'}" required>
-        <small class="p-error block" *ngIf="actualUserToEdit.name==null || actualUserToEdit.name.replaceAll(' ','')==''">nom obligatoire.</small>
+        <small class="p-error block" *ngIf="actualUserToEdit.name==null || actualUserToEdit.name.replaceAll(' ','')==''">Vous êtes obligé de mettre un nom.</small>
       </div>
       <div class="field" id="signup-form">
         <input type="text" pInputText [(ngModel)]="actualUserToEdit.email" id="email" name="email" [style]="{border:'1px solid tomato'}">
-        <small class="p-error block" *ngIf="actualUserToEdit.email==null || actualUserToEdit.email.replaceAll(' ','')==''">mail obligatoire</small>
+        <small class="p-error block" *ngIf="actualUserToEdit.email==null || actualUserToEdit.email.replaceAll(' ','')==''">Vous êtes obligé de mettre une adresse mail</small>
       </div>
     </div>
   </ng-template>

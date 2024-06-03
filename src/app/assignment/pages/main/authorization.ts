@@ -6,7 +6,7 @@ import {ConfigService} from "../../services/config.service";
   template:`
     <p-dialog [(visible)]="configService.modalAutorization" [modal]="true" [style]="{width:'450px'}" [closable]="false">
       <div class="flex align-items-center justify-content-center">
-        <span class="red" style="font-weight:bold;">Cette partie est uniquement pour les Admins</span>
+        <span class="red" style="font-weight:bold;">Cette partie est uniquement pour les administrateurs</span>
       </div>
       <ng-template pTemplate="footer">
         <button pButton pRipple class="p-button-text" label="OK" (click)="closeModalAutorization()"></button>

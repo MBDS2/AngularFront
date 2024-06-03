@@ -10,13 +10,13 @@ import {UtilService} from "../../../../../services/util.service";
         <ng-template pTemplate="content">
           <div class="p-fluid">
             <div class="field col-12">
-              <p-dropdown inputId="name" [(ngModel)]="formService.assignmentToAdd.course.name" [options]="courses" (onChange)="setCourse($event)" optionLabel="name" placeholder="Selectionner cours"></p-dropdown>
+              <p-dropdown inputId="name" [(ngModel)]="formService.assignmentToAdd.course.name" [options]="courses" (onChange)="setCourse($event)" optionLabel="name" placeholder="Sélectionner un cours"></p-dropdown>
             </div>
           </div>
         </ng-template>
         <ng-template pTemplate="footer">
           <div class="grid grid-nogutter justify-content-between">
-            <p-button label="Precedant" (onClick)="previousPage()" icon="pi pi-angle-left" iconPos="left"></p-button>
+            <p-button label="Précédant" (onClick)="previousPage()" icon="pi pi-angle-left" iconPos="left"></p-button>
             <p-button label="Suivant" (onClick)="nextPage()" icon="pi pi-angle-right" iconPos="right" [disabled]="!formService.isSelectedCourse()"></p-button>
           </div>
         </ng-template>

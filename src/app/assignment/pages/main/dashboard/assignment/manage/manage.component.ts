@@ -23,9 +23,7 @@ export class ManageComponent {
     this.assignmentService.initConfigAssignmentToAdd();
   }
 
-  onGlobalFilter(dt: Table, assignmentName: Event) {
-    // dt.(assignmentName, 'contains');
-  }
+  onGlobalFilter(dt: Table, assignmentName: Event) {}
 
   ngOnInit(): void {
     this.assignmentService.getAssignments().subscribe(assignments => this.assignments = assignments);
@@ -49,8 +47,6 @@ export class ManageComponent {
   }
 
   showAddAssignment() {
-    // this.assignmentService.setConfigAssignmentToAdd({modalOpened: true, assignment: {}})
-    console.log("clicked add")
     this.route.navigate(['add'])
   }
 

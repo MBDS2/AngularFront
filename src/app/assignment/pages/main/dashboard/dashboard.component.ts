@@ -44,19 +44,13 @@ export class DashboardComponent implements OnInit{
     this.isUserLogged = this.authService.isUserLogged();
     this.formService.initSortField();
   }
-  cours: string [] = ['angular.png', 'base_donnes.png', 'big_data.png','devops.png','data_analyst.png','gestioon_projet.png', 'grails.png',
-  'mongodb.png','mysql.png','r.png','statistques.png']
-
+  cours: string [] = ['angular.png', 'base_donnes.png', 'big_data.png','devops.png','data_analyst.png','gestioon_projet.png', 'grails.png', 'mongodb.png','mysql.png','r.png','statistques.png']
   profs: string[] = ['teacher1.jpg', 'teacher2.jpg', 'teacher3.jpg', 'teacher4.jpg', 'teacher5.jpg', 'teacher6.webp', 'teacher7.webp']
-
   assignmentLocal!: Assignment[];
-
   selectedAssignment!: Assignment;
-
   sortOptions!: SelectedItem[] ;
   displayModal: boolean = false;
   assignmentName!: string;
-
   isOutOfDeadLine(deadLine: Date): boolean{
     let newDate = new Date();
     let day = newDate.getDate();

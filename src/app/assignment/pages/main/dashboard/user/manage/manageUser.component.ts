@@ -32,7 +32,7 @@ export class ManageUserComponent implements OnInit{
   addUserString="Ajouter";
   @ViewChild('dt') dt!: Table;
   constructor(public userService: UserService,private authService: AuthService, public formService: FormService) {
-    this.stateOptions = [{label: 'Classic', value: 'Classic'}, {label: 'Admin', value: 'Admin'}];
+    this.stateOptions = [{label: 'Utilisateur standard', value: 'standard'}, {label: 'Administrateur', value: 'Administrateur'}];
   }
 
   ngOnInit(): void {
@@ -73,7 +73,7 @@ export class ManageUserComponent implements OnInit{
       this.userService.add(user).subscribe(user=>{
         console.log(user)
         this.message=user.msg
-        this.actionPop="Ajout Utilisateur";
+        this.actionPop="Ajouter un utilisateur";
         this.displayModalNotification=true;
         this.ngOnInit();
       });
@@ -90,8 +90,8 @@ export class ManageUserComponent implements OnInit{
   }
   confirmDeleteUser() {
     this.userService.deleteUser(this.userToDelete._id).subscribe(msg =>{
-      this.actionPop="Suppression Utilisateur"
-      this.message=msg.msg//"L'Utilisateur a été supprimé avec success";
+      this.actionPop="Supprimer un utilisateur"
+      this.message=msg.msg
       this.displayModalNotification=true;
       this.ngOnInit();
       console.log(msg)
@@ -131,8 +131,8 @@ export class ManageUserComponent implements OnInit{
       }
       this.userToEdit._id=this.delUser._id;
       this.userService.updateUser(this.userToEdit).subscribe(user=>{
-        this.actionPop="Modification Utilisateur";
-        this.message= user.msg;//"L'Utilisateur a été modifié avec success";
+        this.actionPop="Modifier un utilisateur";
+        this.message= user.msg;
         this.displayModalNotification=true;
         console.log(user);
         this.ngOnInit();

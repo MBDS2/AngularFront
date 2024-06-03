@@ -17,13 +17,13 @@ export interface Student {
         <ng-template pTemplate="content">
           <div class="p-fluid">
             <div class="field col-12">
-              <p-dropdown inputId="student" [(ngModel)]="formService.assignmentToAdd.author" [options]="students" (onChange)="setStudent($event)" optionLabel="name" placeholder="Selectionner Etudiant"></p-dropdown>
+              <p-dropdown inputId="student" [(ngModel)]="formService.assignmentToAdd.author" [options]="students" (onChange)="setStudent($event)" optionLabel="name" placeholder="Sélectionner un étudiant"></p-dropdown>
             </div>
           </div>
         </ng-template>
         <ng-template pTemplate="footer">
           <div class="grid grid-nogutter justify-content-between">
-            <button pButton label="Precedant" (click)="previousPage()" icon="pi pi-angle-left" iconPos="left"></button>
+            <button pButton label="Précédant" (click)="previousPage()" icon="pi pi-angle-left" iconPos="left"></button>
             <button pButton class="p-button-success" label="Valider" (click)="nextPage()" icon="pi pi-angle-right" [disabled]="!formService.isValidfieldStudent()"></button>
           </div>
         </ng-template>

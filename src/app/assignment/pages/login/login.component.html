@@ -2,9 +2,9 @@
   <div class="flex flex-column align-items-center justify-content-center" id="bloc1">
     <div class="signup-container">
       <form class="signup-form">
-        <h2>connexion</h2>
-        <input id="email" type="text" placeholder="Email" [(ngModel)]="email" name="email" required>
-        <p-password id="password" [(ngModel)]="password" placeholder="Password" [feedback]="false" [toggleMask]="true" name="password"></p-password>
+        <h2>Connexion</h2>
+        <input id="email" type="text" placeholder="E-mail" [(ngModel)]="email" name="email" required>
+        <p-password id="password" [(ngModel)]="password" placeholder="Mot de passe" [feedback]="false" [toggleMask]="true" name="password"></p-password>
         <button pButton pRipple label="Connexion" (click)="onSubmit()"></button>
       </form>
     </div>
@@ -14,10 +14,10 @@
 <p-dialog [(visible)]="displayModalPassword" header="Mot de passe oublié" [modal]="true" [style]="{width:'450px'}" [closable]="false">
   <div class="flex align-items-center justify-content-center">
     <i class="pi pi-exclamation-triangle mr-3 red" style="font-size: 2rem"></i>
-    <span class="red">Veuillez voir l'administrateur</span>
+    <span class="red">Veuillez contacter l'administrateur</span>
   </div>
   <ng-template pTemplate="footer">
-    <button pButton pRipple icon="pi pi-check" class="p-button-text" label="D'accord" (click)="closeModalPassword()"></button>
+    <button pButton pRipple icon="pi pi-check" class="p-button-text" label="Compris" (click)="closeModalPassword()"></button>
   </ng-template>
 </p-dialog>
 

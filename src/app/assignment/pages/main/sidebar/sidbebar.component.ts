@@ -20,7 +20,7 @@ export class SidbebarComponent implements OnInit{
 
     this.model = [
       {
-        label: 'Home',
+        label: 'Accueil',
         item: {
             label: 'Accueil',
             icon: 'pi pi-fw pi-home',
@@ -36,9 +36,9 @@ export class SidbebarComponent implements OnInit{
           }
       },
       {
-        label: 'Users',
+        label: 'Utilisateurs',
         item: {
-          label: 'Users',
+          label: 'Utilisateurs',
           icon: 'pi pi-users',
           routerLink: ['/users'],
         }

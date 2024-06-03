@@ -19,7 +19,6 @@ import {FormService} from "../../../../../services/form.service";
                 [(ngModel)]="formService.assignmentToAdd.name"
                 [ngClass]="{ 'ng-dirty': (firstname.invalid && submitted) || (firstname.dirty && firstname.invalid) }"
               />
-              <small *ngIf="(firstname.invalid && submitted) || (firstname.dirty && firstname.invalid)" class="p-error">Nom est obligatoire.</small>
             </div>
 
               <div class="field col-12">

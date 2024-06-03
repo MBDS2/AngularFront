@@ -16,18 +16,10 @@
         </ng-template>
         <ng-template pTemplate="header">
           <tr>
-            <th>
-              Image
-            </th>
-            <th >
-              Nom
-            </th>
-            <th >
-              Auteur
-            </th>
-            <th >
-              Matière
-            </th>
+            <th>Image</th>
+            <th >Nom</th>
+            <th >Auteur</th>
+            <th >Matière</th>
             <th></th>
           </tr>
         </ng-template>
@@ -38,7 +30,7 @@
               <img [src]="assignment.course.coursePhoto" [alt]="assignment.name" style="width: 50px; height: 50px;" class="shadow-4" />
             </td>
             <td>
-              <span class="p-column-title">Name</span>
+              <span class="p-column-title">Nom</span>
               {{assignment.name}}
             </td>
             <td>

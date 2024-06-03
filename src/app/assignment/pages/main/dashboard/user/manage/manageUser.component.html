@@ -14,16 +14,10 @@
         </ng-template>
         <ng-template pTemplate="header">
           <tr>
-            <th>
-              Photo
-            </th>
-            <th >Name
-            </th>
-            <th >Email
-            </th>
-            <th >
-              role
-            </th>
+            <th>Photo</th>
+            <th >Nom de l'utilisateur</th>
+            <th >Adresse mail</th>
+            <th >Rôle</th>
             <th></th>
           </tr>
         </ng-template>
@@ -34,15 +28,15 @@
               <img [src]="user.photo" [alt]="user.name" style="width: 50px; height: 50px;" class="shadow-4" />
             </td>
             <td>
-              <span class="p-column-title">Name</span>
+              <span class="p-column-title">Nom de l'utilisateur</span>
               {{user.name}}
             </td>
             <td>
-              <span class="p-column-title">Email</span>
+              <span class="p-column-title">Adresse mail</span>
               {{user.email}}
             </td>
             <td>
-              <span class="p-column-title">role</span>
+              <span class="p-column-title">Rôle</span>
               {{user.role}}
             </td>
             <td>
@@ -63,20 +57,15 @@
     <div class=" card  mt-2">
       <div class="field">
         <input type="text" pInputText [(ngModel)]="name" id="name" name="name" placeholder="Nom"/>
-        <small class="p-error block" *ngIf="name==null || name.replaceAll(' ','')==''">Obligatoire</small>
       </div>
       <div class="field">
         <input type="text" pInputText [(ngModel)]="email" id="email" name="email" placeholder="Email"/>
-        <small class="p-error block" *ngIf="email==null || email.replaceAll(' ','')==''">Obligatoire</small>
       </div>
       <div class="field">
-        <p-password [(ngModel)]="password" id="password" name="password" [toggleMask] ="true" aria-placeholder="Mot de passe"></p-password>
-        <small class="p-error block" *ngIf="password==null || password.replaceAll(' ','')==''">Obligatoire</small>
-        <small class="p-error block" *ngIf="password?.search(' ')!=-1">Ne doit pas contenir d'espace</small>
+        <p-password [(ngModel)]="password" id="password" name="password" [feedback]="false" [toggleMask] ="true" aria-placeholder="Mot de passe"></p-password>
       </div>
       <div class="field">
         <p-selectButton id="role"  [options]="stateOptions" [(ngModel)]="role" optionLabel="label" optionValue="value" name="role" aria-placeholder="Role"></p-selectButton>
-        <small class="p-error block" *ngIf="role==null">Obligatoire</small>
       </div>
     </div>
   </ng-template>
@@ -86,25 +75,21 @@
   </ng-template>
 </p-dialog>
 
-<!--Boite de dialogue pour la modification d'un utilisateur-->
 <p-dialog [(visible)]="displayEditUserModal" [modal]="true" [style]="{width: '30vw'}" class="p-fluid"
           [draggable]="false" [resizable]="false" [closable]="false">
   <ng-template pTemplate="body">
     <div class=" card  mt-2">
       <div class="field">
         <input type="text" pInputText [(ngModel)]="userToEdit.name" id="editName" name="name" placeholder="Nom"/>
-        <small class="p-error block" *ngIf="userToEdit.name==null || userToEdit.name.replaceAll(' ','')==''">Obligatoire</small>
       </div>
       <div class="field">
-        <input type="text" pInputText [(ngModel)]="userToEdit.email" id="editEmail" name="email" placeholder="Email"/>
-        <small class="p-error block" *ngIf="userToEdit.email==null || userToEdit.email.replaceAll(' ','')==''">Obligatoire</small>
+        <input type="text" pInputText [(ngModel)]="userToEdit.email" id="editEmail" name="email" placeholder="E-mail"/>
       </div>
       <div class="field">
-        <p-password [(ngModel)]="editedPassword"  id="editedPassword" name="editedPassword" [toggleMask] ="true" aria-placeholder="Mot de passe"></p-password>
+        <p-password [(ngModel)]="editedPassword"  id="editedPassword" name="editedPassword" [feedback]="false" [toggleMask] ="true" aria-placeholder="Mot de passe"></p-password>
       </div>
       <div class="field">
         <p-selectButton id="editRole"  [options]="stateOptions" [(ngModel)]="userToEdit.role" optionLabel="label" optionValue="value" name="role"></p-selectButton>
-        <small class="p-error block" *ngIf="userToEdit.role==null">Obligatoire</small>
       </div>
     </div>
   </ng-template>
@@ -114,10 +99,9 @@
   </ng-template>
 </p-dialog>
 
-<!--Boite de dialogue pour la suppression d'un utilisateur-->
 <p-dialog [(visible)]="displayDeleteUserModal" [modal]="true" [style]="{width:'450px'}" [closable]="false">
   <div class="flex align-items-center justify-content-center">
-    <span *ngIf="userToDelete" style="color: red;font-weight:bold;">Voulez-vous supprimer ?</span>
+    <span *ngIf="userToDelete" style="color: red;font-weight:bold;">Êtes vous sûr de vouloir supprimer ?</span>
   </div>
   <ng-template pTemplate="footer">
     <div style="display: flex; justify-content: center; align-items: center;">
